@@ -1,0 +1,16 @@
+{
+  "name": "weather_search_by_city",
+  "version": "1.0.0",
+  "description": "app search weather",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "js",
+    "nodejs"
+  ],
+  "author": "ns",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
