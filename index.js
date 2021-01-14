@@ -9,13 +9,13 @@ router.use(express.static('public'));
 router.use(bodyParser.urlencoded({extended: true}));
 
 router.get('/', (req, res) => {
-  res.render('index');
+  res.render('index', { weather: null, error: null });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
 	const { city } = req.body
-	weatherRequest(city)
-	res.render('index')
+	const { weather, error } = await weatherRequest(city)
+	res.render('index', { weather, error })
 });
 
 router.listen(3000, () => {

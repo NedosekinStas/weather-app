@@ -8,25 +8,26 @@
     <title>City weather</title>
 </head>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-          <div class="content">
-            <div class="content-header">
-              <h1>Test</h1>
-              <div class="error">Some error</div>    
+  <div class="content">
+    <div class="container d-flex justify-content-center">
+      <div class="row">
+        <div class="content-header">
+          <% if(weather) { %>
+            <h1><%= weather%></h1>
+          <% } %>
+          <% if (error) {%> 
+            <div class="error">Some error</div>
+          <% } %>    
+        </div>
+        <div class="content-form">
+          <form action="/" method="POST">
+            <div class="mb-3">
+              <input type="text" class="form-control" name="city">
+              <div id="cityHelp" class="form-text">Название города</div>
             </div>
-            <div class="content-form col-4">
-              <form action="/" method="POST">
-                <div class="mb-3">
-                  <label for="city" class="form-label">City</label>
-                  <input type="text" class="form-control" name="city">
-                  <div id="emailHelp" class="form-text">Название города</div>
-                </div>
-                <button type="submit" class="btn btn-primary">Показать погоду</button>
-              </form>
-            </div>
-          </div>
+            <button type="submit" class="btn btn-primary">Показать погоду</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
